@@ -1,0 +1,96 @@
+<html>
+
+<style>
+.pickobj{
+    padding: 10px;
+    background-color: pink;
+    border: 5px groove blue;
+
+}
+
+.pickbox {
+    float: left; 
+    width: 200px; 
+    height: 200px;
+    margin: 15px;
+    border: 5px groove red;
+    background-color: orange
+}
+.dropbox {
+    float: left; 
+    width: 200px; 
+    height: 200px;
+    margin: 15px;
+    border: 5px groove RED;
+    background-color: blue
+}
+
+.correct{
+    background-color: green;
+}
+
+.wrong{
+    background-color: red;
+}
+</style>
+
+<div class="pickbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p class="pickobj" 
+        ondragstart="dragStart(event)" 
+        draggable="true" 
+        id="dragtarget1" 
+        data="2">
+        <img src="http://ajournalofmusicalthings.com/wp-content/uploads/Illuminati-Logo.png" width=100%>
+    </p>
+</div>
+<div class="pickbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p class="pickobj" 
+        ondragstart="dragStart(event)" 
+        draggable="true" 
+        id="dragtarget2" 
+        data="1">
+        <img src="http://cdn.skim.gs/images/yrshuxnnxrwnlsgczn4e/obama-joe-biden-memes-tiny-hands-burn" width=100% length=100%>
+    </p>
+</div>
+<div class="dropbox" 
+        ondrop="drop(event)" 
+        ondragover="allowDrop(event)" 
+        data="1">
+        Joe Biden Meme
+</div>
+<div class="dropbox" 
+        ondrop="drop(event)" 
+        ondragover="allowDrop(event)" 
+        data="2">
+        Illuminati Confirmed
+</div>
+
+<script>
+function dragStart(event) {
+    event.dataTransfer.setData("id", event.target.id);
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    var id = event.dataTransfer.getData("id");
+    var content = document.getElementById(id);
+    var dragval = content.getAttribute("data").valueOf();
+    var dropval = event.target.getAttribute("data").valueOf();
+
+    if(dragval == dropval) {
+        window.alert("Hurray")
+        console.log("Hurray")
+    }
+
+
+    event.target.appendChild(content);
+
+
+}
+</script>
+
+</html>
