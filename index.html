@@ -1,9 +1,14 @@
 <html>
 
 Hi! I am the Dark Phoenix. Call me Bob.
+  <script>
+    var back= ["http://www.hd-wallpapersdownload.com/script/bulk-upload/colored-wallpapers-wallpaper.jpg","http://blog.ellusionist.com/images/ac08.jpg","https://newevolutiondesigns.com/images/freebies/cool-wallpaper-1.jpg","http://imagecolony.com/wp-content/uploads/2016/08/Cool-Wallpapers-HD-60F.jpg","http://cdn.wonderfulengineering.com/wp-content/uploads/2014/10/simple-wallpaper-26.jpg"]
+    var randback = Math.floor(Math.random() * back.length)
+    var randImage = back[randback]
+    document.body.style.backgroundImage = "url(" randImage + ")"
+  </script>
   
-  <style>
-    <font color="red">
+    <style>
     body{
       background-image: url("http://blog.ellusionist.com/images/ac08.jpg");
       background-size: cover;
@@ -11,7 +16,6 @@ Hi! I am the Dark Phoenix. Call me Bob.
        
       
     }
-    </font>
   </style>
   <b>
   <center>
